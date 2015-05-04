@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="content">
+	{% for post in posts %}
+	<div id="date">{{post.date_created|date:"M d, Y"}}</div><div id="post"><a href="{{post.get_absolute_url}}" style="text-decoration: none; color: #41383C">{{post.title}}</a></div>
+		<div id="tag">
+			{% for tag in post.tags.names %}
+			<a href="{% url 'tag_detail' tag %}" style="text-decoration: none; color:#C12267;">{{tag}}</a>
+			{% endfor %}
+		</div>	
+	{% endfor %}
+
+<div class="push"></div>
+
+</div>
+<div class="footer">
+   {% include "footer.html" %}
+</div>
+
+{% endblock %}

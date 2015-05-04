@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}css/style.less" />
+        <script type="text/javascript" src="/static/css/less.js"></script>
+   
+    </head>
+
+<body>
+    <div id="header"> 
+        <div id="logo"><img src="{{ STATIC_URL }}img/anime.jpg" /></div>
+        <div id="banner">I'm Ada.. I'm writing about Computer Software(still learning), aliens, maths and another stuff. The point is time machine. Runs Python-Django. Here/ github /By the way, alien is just a joke, I have definatelly no idea about aliens.</div>
+    </div>
+    <div id="menubar">
+        <div class="menu1"><a href="/" style="text-decoration: none; color: #FBFCFB">Home</a></div>
+        <div class="menu2"><a href="{% url "about_me" %}" style="text-decoration: none; color: #FBFCFB">About Me</a></div>
+        <div class="menu3"><a href="http://adakarci.blogspot.com.tr/" style="text-decoration: none; color: #FBFCFB">Blogception</a></div>
+        <div class="menu4"><a href="" style="text-decoration: none; color: #FBFCFB">ErrorList/Libraries</a></div>
+    </div>
+
+{% block content %}
+
+{% endblock content %}
+    
+</body>
+
+</div>
+
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div id="content">
+
+	<div id="date-post">{{post.date_created|date:"M d, Y"}}</div>
+	<div id="content-post">
+		<div style="color:#C12267;font-size:26px">{{post.title}}</div><p>
+	{{post.content}}
+	</div>
+
+	{% if comments %}
+	<div id="comments">
+		{% for comment in comments %}
+		<div style="color:#C12267;"><p>{{comment.owner}}</div><p>
+		{{comment}}
+		{% endfor %}</div>
+	{% endif %}
+	<div id="comment">
+		
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+		<form action="{% url 'create_comment' post.id %}" method="post" >
+
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" value="Submit">
+	</form>
+	</div>
+<div class="push"></div>
+
+</div>
+<div class="footer">
+   {% include "footer.html" %}
+</div>
+
+
+{% endblock %}
